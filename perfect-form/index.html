@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect form</title>
+    <meta name="description" content="Perfect form learning session">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <h1>Join the event</h1>
+        <form>
+            <fieldset>
+                <legend>Personnal information</legend>
+                <label for="lastName">Last name * <input type="text" id="lastName" name="lastName" placeholder="Doe" required></label>
+                <label for="firstName">First name * <input type="text" id="firstName" name="firstName" placeholder="John" required></label>
+                <label for="email">
+                    Email *
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="john@doe.com" 
+                        pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" 
+                        required
+                    >
+                </label>
+                <label for="password">
+                    Password (8 characters minimum): *
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        minlength="8" 
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                        title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" 
+                        required
+                    >
+                </label>
+                <label for="birthDate">Birth Date * <input type="date" id="birthDate" name="birthDate" required></label>
+            </fieldset>
+            <fieldset>
+                <legend>Event details</legend>
+                <label for="eventType">Event type</label>
+                <select name="eventType" id="eventType">
+                    <option value="design" selected>Design masterclass</option>
+                    <option value="dev">Dev masterclass</option>
+                    <option value="3d">3D masterclass</option>
+                </select>
+                <fieldset>
+                    <legend>Localisation</legend>
+                    <input type="radio" name="localisation" value="home" id="home" checked><label for="home">home</label>
+                    <input type="radio" name="localisation" value="not home" id="not-home"><label for="not-home">not home</label>
+                </fieldset>
+                <fieldset>
+                    <legend>Days of attendance</legend>
+                    <input type="checkbox" name="days" value="monday" id="monday"><label for="monday">monday</label>
+                    <input type="checkbox" name="days" value="tuesday" id="tuesday"><label for="tuesday">tuesday</label>
+                    <input type="checkbox" name="days" value="wednesday" id="wednesday"><label for="wednesday">wednesday</label>
+                    <input type="checkbox" name="days" value="thursday" id="thursday"><label for="thursday">thursday</label>
+                    <input type="checkbox" name="days" value="friday" id="friday"><label for="friday">friday</label>
+                    <input type="checkbox" name="days" value="saturday" id="saturday"><label for="saturday">saturday</label>
+                    <input type="checkbox" name="days" value="sunday" id="sunday"><label for="sunday">sunday</label>
+                </fieldset>
+            </fieldset>
+            <fieldset>
+                <legend>Other information</legend>
+                <label for="picture">Picture *</label>
+                <input type="file" id="picture" name="picture" required accept="image/*">
+                <label for="about">Present yourself</label>
+                <textarea  id="about" name="about" cols="30" rows="5" required></textarea>
+                <fieldset>
+                    <legend>Language</legend>
+                    <input type="checkbox" name="language" value="french" id="french"><label for="french">french</label>
+                    <input type="checkbox" name="language" value="english" id="english"><label for="english">english</label>
+                    <input type="checkbox" name="language" value="other" id="other"><label for="other">other</label>
+                    <input
+                        type="text"
+                        id="otherValue"
+                        name="otherValue"
+                    />
+                </fieldset>    
+                <label for="cgu">
+                    <input type="checkbox" name="cgu" id="cgu" required>
+                        J'ai lu et j'accepte les
+                        <a 
+                            href="#" 
+                            target="_blank"
+                            title="Lire les conditions générales d'utilisations">
+                                CGU
+                        </a> 
+                        *
+                </label>   
+                <p>* for required fields</p>
+            </fieldset>
+            <input type="submit" name="submit" id="submit" value="Send">
+            <input type="reset" name="reset" id="reset" value="Reset">
+        </form>
+    </main>
+</body>
+</html>

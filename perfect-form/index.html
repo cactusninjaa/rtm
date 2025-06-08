@@ -93,9 +93,10 @@
                         id="otherValue"
                         name="otherValue"
                         placeholder="Other language"
+                        class="hidden"
                     />
                 </fieldset>    
-                <label for="cgu">
+                <label for="cgu" class="form-control">
                     <input type="checkbox" name="cgu" id="cgu" required>
                         J'ai lu et j'accepte les
                         <a 
@@ -113,4 +114,16 @@
         </form>
     </main>
 </body>
+
+<script>
+    const otherInput = document.getElementById('other');
+    const otherField = document.getElementById('otherValue');
+
+
+    const showField = () => {
+        otherField.classList.toggle('hidden')
+        console.log('hello')
+    }
+    otherInput.addEventListener("input", showField);
+</script>
 </html>

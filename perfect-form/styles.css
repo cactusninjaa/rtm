@@ -84,6 +84,9 @@ main{
         max-width: 70%;
     }
 }
+.hidden{
+    display: none;
+}
 
 fieldset{
     border: none;

@@ -10,13 +10,26 @@
 <body>
     <main>
         <h1>Join the event</h1>
+     
         <form>
+            <fieldset class="toggle-group" id="colorScheme">
+                <legend>Color scheme</legend>
+                <label class="form-control">
+                    <input type="radio" name="color-scheme" id="color-scheme-light" value="0" data-sr>Light
+                </label>
+                <label class="form-control">
+                    <input type="radio" name="color-scheme" value="auto" checked data-sr>Auto
+                </label>
+                <label class="form-control">
+                    <input type="radio" name="color-scheme" id="color-scheme-dark" value="1" data-sr>Dark
+                </label>
+            </fieldset>
             <fieldset>
                 <legend>Personnal information</legend>
-                <label for="lastName">Last name * <input type="text" id="lastName" name="lastName" placeholder="Doe" required></label>
-                <label for="firstName">First name * <input type="text" id="firstName" name="firstName" placeholder="John" required></label>
+                <label for="lastName">Last name <span class="required">*</span> <input type="text" id="lastName" name="lastName" placeholder="Doe" required></label>
+                <label for="firstName">First name <span class="required">*</span> <input type="text" id="firstName" name="firstName" placeholder="John" required></label>
                 <label for="email">
-                    Email *
+                    Email <span class="required">*</span>
                     <input 
                         type="email" 
                         id="email" 
@@ -27,7 +40,7 @@
                     >
                 </label>
                 <label for="password">
-                    Password (8 characters minimum): *
+                    Password (8 characters minimum): <span class="required">*</span>
                     <input 
                         type="password" 
                         id="password" 
@@ -38,7 +51,7 @@
                         required
                     >
                 </label>
-                <label for="birthDate">Birth Date * <input type="date" id="birthDate" name="birthDate" required></label>
+                <label for="birthDate">Birth Date <span class="required">*</span> <input type="date" id="birthDate" name="birthDate" required></label>
             </fieldset>
             <fieldset>
                 <legend>Event details</legend>
@@ -50,35 +63,36 @@
                 </select>
                 <fieldset>
                     <legend>Localisation</legend>
-                    <input type="radio" name="localisation" value="home" id="home" checked><label for="home">home</label>
-                    <input type="radio" name="localisation" value="not home" id="not-home"><label for="not-home">not home</label>
+                    <label for="home" class="form-control"><input type="radio" name="localisation" value="home" id="home" checked>home</label>
+                    <label for="not-home" class="form-control"><input type="radio" name="localisation" value="not home" id="not-home">not home</label>
                 </fieldset>
                 <fieldset>
                     <legend>Days of attendance</legend>
-                    <input type="checkbox" name="days" value="monday" id="monday"><label for="monday">monday</label>
-                    <input type="checkbox" name="days" value="tuesday" id="tuesday"><label for="tuesday">tuesday</label>
-                    <input type="checkbox" name="days" value="wednesday" id="wednesday"><label for="wednesday">wednesday</label>
-                    <input type="checkbox" name="days" value="thursday" id="thursday"><label for="thursday">thursday</label>
-                    <input type="checkbox" name="days" value="friday" id="friday"><label for="friday">friday</label>
-                    <input type="checkbox" name="days" value="saturday" id="saturday"><label for="saturday">saturday</label>
-                    <input type="checkbox" name="days" value="sunday" id="sunday"><label for="sunday">sunday</label>
+                    <label for="monday" class="form-control"><input type="checkbox" name="days" value="monday" id="monday">Monday</label>
+                    <label for="tuesday" class="form-control"> <input type="checkbox" name="days" value="tuesday" id="tuesday">Tuesday</label>
+                    <label for="wednesday" class="form-control"><input type="checkbox" name="days" value="wednesday" id="wednesday">Wednesday</label>
+                    <label for="thursday" class="form-control"> <input type="checkbox" name="days" value="thursday" id="thursday">Thursday</label>
+                    <label for="friday" class="form-control"><input type="checkbox" name="days" value="friday" id="friday">Friday</label>
+                    <label for="saturday" class="form-control"><input type="checkbox" name="days" value="saturday" id="saturday">Saturday</label>
+                    <label for="sunday" class="form-control"><input type="checkbox" name="days" value="sunday" id="sunday">Sunday</label>
                 </fieldset>
             </fieldset>
             <fieldset>
                 <legend>Other information</legend>
-                <label for="picture">Picture *</label>
+                <label for="picture">Picture <span class="required">*</span></label>
                 <input type="file" id="picture" name="picture" required accept="image/*">
                 <label for="about">Present yourself</label>
                 <textarea  id="about" name="about" cols="30" rows="5" required></textarea>
                 <fieldset>
                     <legend>Language</legend>
-                    <input type="checkbox" name="language" value="french" id="french"><label for="french">french</label>
-                    <input type="checkbox" name="language" value="english" id="english"><label for="english">english</label>
-                    <input type="checkbox" name="language" value="other" id="other"><label for="other">other</label>
+                    <label for="french" class="form-control"><input type="checkbox" name="language" value="french" id="french" class="form-control">French</label>
+                    <label for="english" class="form-control"><input type="checkbox" name="language" value="english" id="english" >English</label>
+                    <label for="other" class="form-control"><input type="checkbox" name="language" value="other" id="other">Other</label>
                     <input
                         type="text"
                         id="otherValue"
                         name="otherValue"
+                        placeholder="Other language"
                     />
                 </fieldset>    
                 <label for="cgu">
@@ -90,10 +104,10 @@
                             title="Lire les conditions générales d'utilisations">
                                 CGU
                         </a> 
-                        *
+                        <span class="required">*</span>
                 </label>   
-                <p>* for required fields</p>
             </fieldset>
+            <p><span class="required">*</span> for required fields</p>
             <input type="submit" name="submit" id="submit" value="Send">
             <input type="reset" name="reset" id="reset" value="Reset">
         </form>
